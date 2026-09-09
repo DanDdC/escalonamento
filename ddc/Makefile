@@ -13,3 +13,6 @@ $(TARGET): $(OBJS)
 
 clean:
 	rm -f $(OBJS) $(TARGET) rate_ddc.out edf_ddc.out ../rate_ddc.out ../edf_ddc.out
+
+test: scheduler
+	bash run_tests.sh
