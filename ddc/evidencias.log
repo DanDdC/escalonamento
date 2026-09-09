@@ -377,3 +377,103 @@ rc:1
 [?2004lexit
 
 Script done on 2026-09-09 20:02:53-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-09-09 20:46:07-03:00 [TERM="xterm-256color" TTY="/dev/pts/5" COLUMNS="218" LINES="14"]
+[?2004h]0;danie@PCDEDANIEL: ~/escalonamento[01;32mdanie@PCDEDANIEL[00m:[01;34m~/escalonamento[00m$ [7mdate; whoami; pwd[27m
+[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cdate; whoami; pwd
+[A
+[?2004lWed Sep  9 20:46:14 -03 2026
+danie
+/home/danie/escalonamento
+[?2004h]0;danie@PCDEDANIEL: ~/escalonamento[01;32mdanie@PCDEDANIEL[00m:[01;34m~/escalonamento[00m$ [7mmake -C ddc clean && make -C ddc[27mmake -C ddc clean && make -C ddc
+[?2004lmake: Entering directory '/home/danie/escalonamento/ddc'
+rm -f main.o task.o sim.o output.o scheduler rate_ddc.out edf_ddc.out ../rate_ddc.out ../edf_ddc.out
+make: Leaving directory '/home/danie/escalonamento/ddc'
+make: Entering directory '/home/danie/escalonamento/ddc'
+gcc -Wall -Wextra -std=c99 -c main.c -o main.o
+gcc -Wall -Wextra -std=c99 -c task.c -o task.o
+gcc -Wall -Wextra -std=c99 -c sim.c -o sim.o
+gcc -Wall -Wextra -std=c99 -c output.c -o output.o
+gcc -Wall -Wextra -std=c99 main.o task.o sim.o output.o -o scheduler
+make: Leaving directory '/home/danie/escalonamento/ddc'
+[?2004h]0;danie@PCDEDANIEL: ~/escalonamento[01;32mdanie@PCDEDANIEL[00m:[01;34m~/escalonamento[00m$ [7m./ddc/scheduler rate ddc/voo.txt; echo rc:$?[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./ddc/scheduler rate ddc/voo.txt; echo rc:$?
+[?2004lrc:0
+[?2004h]0;danie@PCDEDANIEL: ~/escalonamento[01;32mdanie@PCDEDANIEL[00m:[01;34m~/escalonamento[00m$ [7mcat rate_ddc.out[27mcat rate_ddc.out
+[?2004lEXECUTION BY RATE
+[ATT] for 8 units - F
+[NAV] for 12 units - H
+[ATT] for 8 units - F
+[NAV] for 2 units - L
+idle for 10 units
+[ATT] for 8 units - F
+idle for 2 units
+[NAV] for 10 units - H
+[ATT] for 8 units - F
+[NAV] for 5 units - F
+idle for 7 units
+[ATT] for 8 units - F
+idle for 12 units
+
+LOST DEADLINES
+[ATT] 0
+[NAV] 1
+
+COMPLETE EXECUTION
+[ATT] 5
+[NAV] 1
+
+KILLED
+[ATT] 0
+[NAV] 0
+[?2004h]0;danie@PCDEDANIEL: ~/escalonamento[01;32mdanie@PCDEDANIEL[00m:[01;34m~/escalonamento[00m$ [7m./ddc/scheduler edf ddc/voo.txt; echo rc:$?[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./ddc/scheduler edf ddc/voo.txt; echo rc:$?
+[?2004lrc:0
+[?2004h]0;danie@PCDEDANIEL: ~/escalonamento[01;32mdanie@PCDEDANIEL[00m:[01;34m~/escalonamento[00m$ [7mcat edf_ddc.out[27mcat edf_ddc.out
+[?2004lEXECUTION BY EDF
+[ATT] for 8 units - F
+[NAV] for 15 units - F
+[ATT] for 8 units - F
+idle for 9 units
+[ATT] for 8 units - F
+idle for 2 units
+[NAV] for 10 units - H
+[ATT] for 8 units - F
+[NAV] for 5 units - F
+idle for 7 units
+[ATT] for 8 units - F
+idle for 12 units
+
+LOST DEADLINES
+[ATT] 0
+[NAV] 0
+
+COMPLETE EXECUTION
+[ATT] 5
+[NAV] 2
+
+KILLED
+[ATT] 0
+[NAV] 0
+[?2004h]0;danie@PCDEDANIEL: ~/escalonamento[01;32mdanie@PCDEDANIEL[00m:[01;34m~/escalonamento[00m$ [7mmake -C ddc test[27mmake -C ddc test
+[?2004lmake: Entering directory '/home/danie/escalonamento/ddc'
+bash run_tests.sh
+PASS: rate gera saida
+PASS: rate tem LOST
+PASS: rate NAV LOST 1
+PASS: edf NAV LOST 0
+PASS: arquivo inexistente rc 1
+PASS: msg arquivo inexistente
+PASS: C>D invalido rc 1
+PASS: D>P invalido rc 1
+PASS: sem args rc 1
+PASS: algoritmo invalido rc 1
+PASS: stdout vazio
+-----------------------------------
+suite: 11 PASS, 0 FAIL
+make: Leaving directory '/home/danie/escalonamento/ddc'
+[?2004h]0;danie@PCDEDANIEL: ~/escalonamento[01;32mdanie@PCDEDANIEL[00m:[01;34m~/escalonamento[00m$ [7mmake -C ddc clean[27mmake -C ddc clean
+[?2004lmake: Entering directory '/home/danie/escalonamento/ddc'
+rm -f main.o task.o sim.o output.o scheduler rate_ddc.out edf_ddc.out ../rate_ddc.out ../edf_ddc.out
+make: Leaving directory '/home/danie/escalonamento/ddc'
+[?2004h]0;danie@PCDEDANIEL: ~/escalonamento[01;32mdanie@PCDEDANIEL[00m:[01;34m~/escalonamento[00m$ exit
+[?2004lexit
+
+Script done on 2026-09-09 20:47:07-03:00 [COMMAND_EXIT_CODE="0"]
