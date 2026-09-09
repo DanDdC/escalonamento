@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -std=c99
-OBJS = main.o task.o sim.o output.o
+OBJS = main.o task.o
 TARGET = scheduler
 
 all: $(TARGET)
@@ -8,7 +8,7 @@ all: $(TARGET)
 $(TARGET): $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $(TARGET)
 
-%.o: %.c task.h sim.h output.h
+%.o: %.c task.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:

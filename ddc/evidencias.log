@@ -1,0 +1,29 @@
+Script started on 2026-09-09 19:03:02-03:00 [TERM="xterm-256color" TTY="/dev/pts/5" COLUMNS="218" LINES="14"]
+[?2004h]0;danie@PCDEDANIEL: ~/escalonamento[01;32mdanie@PCDEDANIEL[00m:[01;34m~/escalonamento[00m$ date;who[K[K[K whoami;pwd[1@ [C[C[C
+[?2004lWed Sep  9 19:03:13 -03 2026
+danie
+/home/danie/escalonamento
+[?2004h]0;danie@PCDEDANIEL: ~/escalonamento[01;32mdanie@PCDEDANIEL[00m:[01;34m~/escalonamento[00m$ make _[K-C ddc clean
+[?2004lmake: Entering directory '/home/danie/escalonamento/ddc'
+rm -f main.o task.o scheduler rate_ddc.out edf_ddc.out
+make: Leaving directory '/home/danie/escalonamento/ddc'
+[?2004h]0;danie@PCDEDANIEL: ~/escalonamento[01;32mdanie@PCDEDANIEL[00m:[01;34m~/escalonamento[00m$ make -C ddc
+[?2004lmake: Entering directory '/home/danie/escalonamento/ddc'
+gcc -Wall -Wextra -std=c99 -c main.c -o main.o
+gcc -Wall -Wextra -std=c99 -c task.c -o task.o
+gcc -Wall -Wextra -std=c99 main.o task.o -o scheduler
+make: Leaving directory '/home/danie/escalonamento/ddc'
+[?2004h]0;danie@PCDEDANIEL: ~/escalonamento[01;32mdanie@PCDEDANIEL[00m:[01;34m~/escalonamento[00m$ [7m./ddc/scheduler rate ddc/voo.txt[27m
+[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C./ddc/scheduler rate ddc/voo.txt
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kt
+[?2004lparser ok: total=100 n=2 algoritmo=rate
+ATT 20 12 8
+NAV 50 30 15
+[?2004h]0;danie@PCDEDANIEL: ~/escalonamento[01;32mdanie@PCDEDANIEL[00m:[01;34m~/escalonamento[00m$ ./ddc/scheduler edf ddc/voo.txt
+[?2004lparser ok: total=100 n=2 algoritmo=edf
+ATT 20 12 8
+NAV 50 30 15
+[?2004h]0;danie@PCDEDANIEL: ~/escalonamento[01;32mdanie@PCDEDANIEL[00m:[01;34m~/escalonamento[00m$ ext[Koit[K[K[Kit
+[?2004lexit
+
+Script done on 2026-09-09 19:04:11-03:00 [COMMAND_EXIT_CODE="0"]
