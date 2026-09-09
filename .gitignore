@@ -1,0 +1,15 @@
+# build
+*.o
+*.out
+ddc/scheduler
+ddc/*.out
+
+# referencia - nao vai pro tar
+ativ_passada_mandelbrot/
+ativ_passada_proccessflow/
+orientacoes/
+
+# windows
+*.Zone.Identifier
+.gitignore
+*.pdf
